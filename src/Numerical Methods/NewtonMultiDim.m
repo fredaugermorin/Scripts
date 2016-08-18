@@ -14,6 +14,6 @@ if nbiter == itermax
     fprintf('Exited cuz of iterations\n');
 end
 fprintf('Convergence apres %i iterations\n',nbiter);
-disp(xk);
+fprintf('Le min est en: ');disp(xk');
 end
 

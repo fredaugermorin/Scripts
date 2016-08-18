@@ -14,18 +14,22 @@ else
     fprintf('Non Convergence de Steepest Descent');
 end
 %Optimization (min) par Newton Mutlidimensional
+
 fprintf('Fonction 1: Newton Multi dim\n');
 NewtonMultiDim(fun1,grad1,hess1,deb);
-plot(list(1,:),list(2,:),'*');xlabel('x1');ylabel('x2');
+
+%plot(list(1,:),list(2,:),'*');xlabel('x1');ylabel('x2');
 iterFunctionRes = zeros(1,length(list));
 for i=1:length(list)
     iterFunctionRes(i) = fun1(list(:,i));
 end
 figure;
-plot3(list(1,:),list(2,:),iterFunctionRes,'w*');
+subplot(211)
+plot3(list(1,:),list(2,:),iterFunctionRes,'r*');
 hold on;
 x=-1:.1:3;y=-1:.1:3;
 myMatFun1 = computeSurfMatrix(fun1,x,y);
+subplot(212)
 surf(x,y,myMatFun1);
 hold off;
 %% Fonction 2
